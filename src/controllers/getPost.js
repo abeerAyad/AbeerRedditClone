@@ -1,5 +1,7 @@
+/* eslint-disable import/no-unresolved */
 const { join } = require('path');
-const { getPostQuery } = require('../database/querirs');
+// eslint-disable-next-line import/extensions
+const { getPostQuery } = require('../database/queries');
 
 const showHomePost = (req, res) => {
   res.sendFile(join(__dirname, '..', '..', 'public', 'html', 'home.html'));
@@ -10,9 +12,7 @@ const getPost = (req, res) => {
     .then((data) => {
       res.json({ result: data.rows });
     })
-    .catch((err) => {
-      // eslint-disable-next-line no-console
-      console.log(err);
+    .catch(() => {
       res.status(500).json({ msg: 'ERROR SERVER!' });
     });
 };
