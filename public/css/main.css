@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'IBM Plex Sans',Arial, sans-serif;
+    font-size: 16px;
+    background-color: #DAE0E6;
+}
+
+header {
+    background-color: #fff;
+}
+
+header nav {
+ height: 65px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin: 0 60px;
+}
+
+header nav .logo,
+header nav .home {
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+}
+header nav .logo img {
+    width: 200px;
+    height: 200px;
+}
+
+header nav .logo a {
+    color: #000;
+    font-size: 35px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+header nav .home {
+    width: 350px;
+    height: 40px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-right: 100px;
+    border: 1px solid #ccc;
+}
+
+header nav .home a {
+    color: #000;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.form {
+    position: relative;
+    margin-right: 80px;
+}
+
+.form .search-input {
+    padding: 15px 30px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    font-size: 16px;
+
+}
+.form .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.post-content {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
+
+.add-post,
+.create-post {
+    display: flex;
+    background-color: #fff;
+    width: 50%;
+    border-radius: 6px;
+    border: 1px solid #edeff1;
+}
+.add-post {
+    height: 65px;
+    padding-left: 15px;
+    align-items: center;
+}
+.create-post {
+    padding: 12px 15px;
+    margin-top: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.create-post:hover {
+    border: 1px solid #646d73;
+}
+
+.add-post img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.add-post .add-post-btn {
+    text-align: left;
+    width: 90%;
+    height: 40px;
+    margin-left: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+    background-color: #f6f7f8;
+    border: 1px solid #edeff1 ;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.add-post .add-post-btn:hover {
+    background-color: #ffffff33;
+    border: 1px solid #c1cbec;
+}
+
+.create-post .vote-content {
+    padding-right: 15px;
+}
+.post-details .time-user-post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #787C7E;
+}
+
+.post-details .time-user-post .name-user {
+    font-weight: 600;
+    font-size: 18px;
+    color: #313639;
+    cursor: pointer;
+}
+
+.post-details .time-user-post .time {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.post-content .title-post {
+    margin-bottom: 10px;
+
+}
+
+.post-details .image-post  {
+    width: 100%;  
+}
+.post-details .image-post img {
+    width: 100%;
+}
+.vote-content img,
+.comments-edit-delete .edit img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.comments-edit-delete {
+    display: flex;
+    align-items: center;
+}
+
+.comments-edit-delete div {
+    width: 20%;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+.comments-edit-delete div:hover {
+    background-color: #d3d6da;
+}
+
+.comments-edit-delete div p {
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 10px;
+    color: #898989;
+}
