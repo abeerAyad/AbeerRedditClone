@@ -1,4 +1,4 @@
-
+/* eslint-disable no-undef */
 const postContent = document.querySelector('.post-content');
 // const voteContent = document.querySelector('.vote-content');
 

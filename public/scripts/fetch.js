@@ -14,4 +14,4 @@ const fetchPost = (url, data) => fetch(url, {
   })
   .catch((err) => console.log(err));
 
-deleteFetch = (url) => fetch(url, { method: 'DELETE' });
+deleteFetch = (url) => fetch(url, { method: 'DELETE' }).then(() => location.reload());
