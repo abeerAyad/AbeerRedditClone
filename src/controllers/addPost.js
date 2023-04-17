@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 const { join } = require('path');
-const { addPostQuery } = require('../database/queries');
+const { addPostQuery } = require('../database/querirs');
 
 const addNewPost = (req, res) => {
   res.sendFile(
@@ -15,7 +15,7 @@ const addPost = (req, res) => {
   } = req.body;
 
   addPostQuery({
-    title, content_post, image_url,
+    title, content_post, image_url, user_id: 2,
   }).then((data) => {
     console.log(data.rows);
     return res.json({ data: data.rows[0] });
