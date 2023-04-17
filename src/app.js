@@ -4,6 +4,7 @@ const express = require('express');
 
 const compression = require('compression');
 const router = require('./routes/router');
+const authRouter = require('./routes/authRouter');
 
 require('env2')('.env');
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.set('port', process.env.PORT || 5000);
 
+app.use(authRouter);
 app.use(router);
 
 module.exports = app;

@@ -8,7 +8,7 @@ const deletePost = (req, res) => {
   const { id } = req.params;
   console.log(id, 'jjjj');
   deletePostQuery(id).then(() => {
-   res.redirect('/post')
+    res.redirect('/post');
   }).catch((err) => console.log(err));
 };
 module.exports = deletePost;

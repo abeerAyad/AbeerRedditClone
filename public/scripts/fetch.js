@@ -15,3 +15,11 @@ const fetchPost = (url, data) => fetch(url, {
   .catch((err) => console.log(err));
 
 deleteFetch = (url) => fetch(url, { method: 'DELETE' }).then(() => location.reload());
+
+signupFetch = (url, data) => {
+  fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  }).then((res) => res.json());
+};
