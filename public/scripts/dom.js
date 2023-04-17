@@ -1,3 +1,4 @@
+
 const postContent = document.querySelector('.post-content');
 // const voteContent = document.querySelector('.vote-content');
 
@@ -8,7 +9,9 @@ const createElement = (tagName, className, parent) => {
   return element;
 };
 const createDom = (data) => {
+  // postContent.textContent = '';
   const createPost = createElement('div', 'create-post', postContent);
+  createPost.textContent = '';
   const voteContent = createElement('div', 'vote-content', createPost);
   const postDetails = createElement('div', 'post-details', createPost);
   const upVoteImg = createElement('img', '', voteContent);
@@ -49,24 +52,24 @@ const createDom = (data) => {
   const commentIcon = createElement('lord-icon', '', commentsMain);
   commentIcon.src = 'https://cdn.lordicon.com/pkmkagva.json';
   commentIcon.setAttribute('trigger', 'hover');
-  commentIcon.style.width = '20px;';
-  commentIcon.style.height = '20px;';
 
   const commentText = createElement('p', '', commentsMain);
   commentText.textContent = 'Comments';
 
-  const editMain = createElement('div', 'comments', commentsEditDelete);
+  const editMain = createElement('div', 'edit', commentsEditDelete);
   const editIcon = createElement('img', '', editMain);
   editIcon.src = '../img/edit.png';
   const editText = createElement('p', '', editMain);
   editText.textContent = 'Edit';
 
-  const deleteMain = createElement('div', 'comments', commentsEditDelete);
+  const deleteMain = createElement('div', 'delete', commentsEditDelete);
   const deleteIcon = createElement('lord-icon', '', deleteMain);
   deleteIcon.src = 'https://cdn.lordicon.com/jmkrnisz.json';
   deleteIcon.setAttribute('trigger', 'hover');
-  deleteIcon.style.width = '20px;';
-  deleteIcon.style.height = '20px;';
+  deleteMain.addEventListener('click', () => {
+    deleteFetch(`/delete/${data.id}`);
+  });
+
   const deleteText = createElement('p', '', deleteMain);
   deleteText.textContent = 'Delete';
 };

@@ -1,10 +1,17 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
-// eslint-disable-next-line no-unused-vars
+
 const fetchData = (url) => fetch(url).then((res) => res.json());
 const fetchPost = (url, data) => fetch(url, {
+  headers: { 'Content-Type': 'application/json' },
   method: 'POST',
   body: JSON.stringify(data),
-  headers: { 'Content-Type': 'application/json' },
 })
   .then((res) => res.json())
+  .then(() => {
+    location.href = '/post';
+  })
   .catch((err) => console.log(err));
+
+deleteFetch = (url) => fetch(url, { method: 'DELETE' });

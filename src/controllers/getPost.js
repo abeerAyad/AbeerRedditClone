@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 const { join } = require('path');
 // eslint-disable-next-line import/extensions
-const { getPostQuery } = require('../database/queries');
+const { getPostQuery } = require('../database/querirs');
 
 const showHomePost = (req, res) => {
   res.sendFile(join(__dirname, '..', '..', 'public', 'html', 'home.html'));
