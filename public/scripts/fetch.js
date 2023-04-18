@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 /* eslint-disable no-undef */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
@@ -12,6 +13,31 @@ const fetchPost = (url, data) => fetch(url, {
   .then(() => {
     location.href = '/post';
   })
-  .catch((err) => console.log(err));
+  .catch((err) => res.status(500).json({ msg: 'Internal Server Error!' }));
 
 deleteFetch = (url) => fetch(url, { method: 'DELETE' }).then(() => location.reload());
+
+signupFetch = (url, data) => {
+  fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  }).then((res) => res.json()).then((result) => {
+    if (result.error) {
+      customErrors(result.data.message);
+    } else {
+      location.href = '/post';
+    }
+  })
+    .catch((err) => console.log(err, 'errors'));
+};
+
+loginFetch = (url, data) => {
+  fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  }).then((res) => res.json())
+    .then(() => location.href = '/post')
+    .catch((err) => console.log(err));
+};

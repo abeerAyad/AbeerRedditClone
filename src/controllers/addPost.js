@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 const { join } = require('path');
@@ -9,20 +10,20 @@ const addNewPost = (req, res) => {
   );
 };
 const addPost = (req, res) => {
-  console.log(req.body, 'aaaaaaaaaaaaaaaaaaa ');
-  const {
-    title, content_post, image_url,
-  } = req.body;
+  const { title, content_post, image_url } = req.body;
 
   addPostQuery({
-    title, content_post, image_url, user_id: 2,
-  }).then((data) => {
-    console.log(data.rows);
-    return res.json({ data: data.rows[0] });
-  }).catch((err) => {
-    console.log(err);
-    return res.status(500).json({ msg: 'ERROR SERVER!' });
-  });
+    title,
+    content_post,
+    image_url,
+    user_id: req.user.id,
+  })
+    .then((data) => res.status(201).json({
+      error: false,
+      message: 'Created Post successfully',
+      data: data.rows[0],
+    }))
+    .catch((err) => next(err));
 };
 
 module.exports = { addPost, addNewPost };

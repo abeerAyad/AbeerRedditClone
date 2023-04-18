@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="../img/Reddit_Lockup_OnWhite.svg" alt="" class="reddit">
+        </div>
+        <div class="auth-form">
+            <h2>Sign up</h2>
+            <div class="form">
+                <label for="username">User Name</label>
+                <input type="text" name="username" id="username" placeholder="Enter Your User Name">
+                <div class="username error"></div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email-user" placeholder="Enter Your Email">
+                <div class="email error"></div>
+                <label for="email">Password</label>
+                <input type="password" name="password" id="password-user" placeholder="Enter Your Password">
+                <div class="password error"></div>
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword-user" placeholder="Enter Your Confirm Password">
+                <div class="confirmPassword error"></div>
+
+                <button type="button" class="submit-data">Sign Up</button>
+                <span class="back-form">Already a user<a href="/login">Login</a></span>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/fetch.js"></script>
+    <script src="./scripts/signup.js"></script>
+    <script src="./scripts/validationError.js"></script>
+    <script src="./scripts/domError.js"></script>
+</body>
+
+</html>
+
