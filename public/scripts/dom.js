@@ -49,9 +49,8 @@ const createDom = (data) => {
     postDetails,
   );
   const commentsMain = createElement('div', 'comments', commentsEditDelete);
-  const commentIcon = createElement('lord-icon', '', commentsMain);
-  commentIcon.src = 'https://cdn.lordicon.com/pkmkagva.json';
-  commentIcon.setAttribute('trigger', 'hover');
+  const commentIcon = createElement('img', '', commentsMain);
+  commentIcon.src = '../img/comments.png';
 
   const commentText = createElement('p', '', commentsMain);
   commentText.textContent = 'Comments';
@@ -63,9 +62,8 @@ const createDom = (data) => {
   editText.textContent = 'Edit';
 
   const deleteMain = createElement('div', 'delete', commentsEditDelete);
-  const deleteIcon = createElement('lord-icon', '', deleteMain);
-  deleteIcon.src = 'https://cdn.lordicon.com/jmkrnisz.json';
-  deleteIcon.setAttribute('trigger', 'hover');
+  const deleteIcon = createElement('img', '', deleteMain);
+  deleteIcon.src = '../img/delete.png';
   deleteMain.addEventListener('click', () => {
     deleteFetch(`/delete/${data.id}`);
   });

@@ -6,9 +6,18 @@ const { deletePostQuery } = require('../database/querirs');
 const deletePost = (req, res) => {
   // eslint-disable-next-line linebreak-style
   const { id } = req.params;
-  console.log(id, 'jjjj');
-  deletePostQuery(id).then(() => {
-    res.redirect('/post');
-  }).catch((err) => console.log(err));
+  deletePostQuery(id)
+    .then(() => res.status(200).json({
+      error: false,
+      data: {
+        data: {
+          message: 'Post deleted successfully',
+        },
+      },
+    }))
+    .then(() => {
+      res.redirect('/post');
+    })
+    .catch((err) => console.log(err));
 };
 module.exports = deletePost;

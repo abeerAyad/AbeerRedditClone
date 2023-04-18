@@ -160,7 +160,6 @@ header nav .home a {
 
 .post-content .title-post {
     margin-bottom: 10px;
-
 }
 
 .post-details .image-post  {
@@ -170,14 +169,15 @@ header nav .home a {
     width: 100%;
 }
 .vote-content img,
-.comments-edit-delete .edit img{
-    width: 20px;
-    height: 20px;
+.comments-edit-delete  img{
+    width: 25px;
+    height: 25px;
     cursor: pointer;
 }
 
 .comments-edit-delete {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -201,3 +201,4 @@ header nav .home a {
     margin-left: 10px;
     color: #898989;
 }
+
