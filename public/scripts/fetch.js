@@ -38,7 +38,14 @@ loginFetch = (url, data) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   }).then((res) => res.json())
-    .then(() => location.href = '/post')
+    .then((result) => {
+      if (result.error) {
+        customErrors(result.data.message);
+      } else {
+        location.href = '/post';
+      }
+    })
+
     .catch((err) => console.log(err));
 };
 
@@ -63,4 +70,12 @@ searchFetch = (url, data) => fetch(url, {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(data),
 }).then((res) => res.json())
+  .catch((err) => console.log(err, 'fffffffffff'));
+
+editFetch = (url, data) => fetch(url, {
+  method: 'PUT',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data),
+}).then((res) => res.json())
+.then(() => location.href = '/post')
   .catch((err) => console.log(err, 'fffffffffff'));

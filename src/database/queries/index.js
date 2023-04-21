@@ -5,6 +5,8 @@ const userSignupQuery = require('./authUser/signupQuery');
 const userLoginQuery = require('./authUser/loginQuery');
 const searchPostQuery = require('./posts/searchPostQuery');
 const addCommentsQuery = require('./comments/addCommentsQuery');
+const editPostQuery = require('./posts/editPostQuery');
+const getPostByIdQuery = require('./posts/getPostByIdQuery');
 
 module.exports = {
   getPostQuery,
@@ -14,4 +16,6 @@ module.exports = {
   userLoginQuery,
   searchPostQuery,
   addCommentsQuery,
+  editPostQuery,
+  getPostByIdQuery,
 };

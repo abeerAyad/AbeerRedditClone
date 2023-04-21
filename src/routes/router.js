@@ -6,7 +6,10 @@ const {
   addNewPost,
   deletePost,
   logout,
-  searchPost, addCommentsPost,
+  searchPost, addCommentsPost, editPost,
+  getEditPost,
+  getPostById,
+
 } = require('../controllers');
 const { checkAuth, checkAuthRedirect } = require('../middlewares');
 
@@ -14,11 +17,15 @@ const router = Router();
 
 router.get('/post', showHomePost);
 router.get('/posts', getPost);
-router.get('/search', searchPost);
+router.post('/search', searchPost);
 router.get('/addpost', checkAuthRedirect, addNewPost);
+router.get('/editPost/:id', checkAuthRedirect, getEditPost);
 router.use(checkAuth);
 router.get('/logout', logout);
 router.post('/addpost', addPost);
+router.put('/editPostData/:id', editPost);
+router.get('/getPost/:id', getPostById);
+
 router.delete('/delete/:id', deletePost);
 router.post('/comments', addCommentsPost);
 

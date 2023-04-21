@@ -1,12 +1,11 @@
 /* eslint-disable no-undef */
 /* eslint-disable camelcase */
-const { addCommentsQuery } = require('../database/queries');
-const { commentSchema } = require('../utils/validation');
+const { addCommentsQuery } = require('../../database/queries');
+const { commentSchema } = require('../../utils/validation');
 
 const addCommentsPost = (req, res, next) => {
-  console.log(req.body);
   const { comment, postId } = req.body;
-  commentSchema.validateAsync({ comment })
+  commentSchema.validateAsync({comment}, { abortEarly: false })
     .then(() => addCommentsQuery({ comment, user_id: req.user.id, post_id: postId }))
     .then((data) => {
       console.log( data.rows[0]);
