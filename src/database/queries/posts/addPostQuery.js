@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable camelcase */
-const connection = require('../config/connection');
+const connection = require('../../config/connection');
 
 const addPostQuery = ({
   title, content_post, image_url, user_id,

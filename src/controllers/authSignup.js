@@ -2,8 +2,8 @@
 /* eslint-disable max-len */
 /* eslint-disable no-shadow */
 const bcrypt = require('bcrypt');
-const { userSignupQuery } = require('../database/querirs');
-const userSignupSchema = require('../utils/validation/signupSchema');
+const { userSignupQuery } = require('../database/queries');
+const { userSignupSchema } = require('../utils/validation');
 const { generateAccessToken } = require('../utils/jwt');
 
 const saltRounds = 10;
@@ -11,7 +11,6 @@ const authSignupUser = (req, res, next) => {
   const {
     username, email, password, confirmPassword,
   } = req.body;
-
   const { error, value } = userSignupSchema
     .validateAsync(
       {

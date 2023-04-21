@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const connection = require('../config/connection');
+const connection = require('../../config/connection');
 
 const userLoginQuery = (email) => {
   sql = {

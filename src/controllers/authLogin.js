@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 const { join } = require('path');
 const bcrypt = require('bcrypt');
-const { userLoginQuery } = require('../database/querirs');
+const { userLoginQuery } = require('../database/queries');
 const { userLoginSchema } = require('../utils/validation');
 const { generateAccessToken } = require('../utils/jwt');
 const CustomError = require('../utils/helpers/customError');

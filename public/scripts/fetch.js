@@ -41,3 +41,26 @@ loginFetch = (url, data) => {
     .then(() => location.href = '/post')
     .catch((err) => console.log(err));
 };
+
+logoutFetch = (url) => {
+  fetch(url).then((res) => res.json())
+    .then(() => location.href = '/login')
+    .catch((err) => console.log(err));
+};
+
+fetchComments = (url, data) => {
+  fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+};
+
+searchFetch = (url, data) => fetch(url, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data),
+}).then((res) => res.json())
+  .catch((err) => console.log(err, 'fffffffffff'));

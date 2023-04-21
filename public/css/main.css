@@ -54,6 +54,23 @@ header nav .home {
     border: 1px solid #ccc;
 }
 
+.navbar-porfile {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-porfile .logout {
+color: #fff;
+background-color: #FF4500;
+outline: none;
+padding: 5px 10px;
+font-size: 20px;
+border-radius: 10px;
+text-transform: capitalize;
+border: none;
+margin-right: 20px;
+}
+
 header nav .home a {
     color: #000;
     font-size: 20px;
@@ -81,7 +98,7 @@ header nav .home a {
     transform: translateY(-50%);
 }
 
-.post-content {
+.post-content,.posts {
     margin-top: 30px;
     display: flex;
     justify-content: center;
@@ -202,3 +219,31 @@ header nav .home a {
     color: #898989;
 }
 
+.comment-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comment-container textarea {
+    padding: 9px 12px;
+    width: 85%;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid #313639;
+}
+.comment-container textarea:focus {
+    border: 1px solid #FF4500;
+}
+
+.comment-container button {
+ padding: 10px 40px;
+ background-color: #fff;
+ border: 1px solid #FF4500;
+ color: #FF4500;
+ margin-left: 30px;
+ border-radius: 5px;
+ font-size: 20px;
+ font-weight: 600;
+ cursor: pointer;
+}

@@ -24,7 +24,7 @@ textarea {
 
 }
 
-button {
+.form button {
     width: 10%;
     align-self: end;
     background-color: #878a8c;
