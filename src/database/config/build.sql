@@ -37,10 +37,14 @@ CREATE TABLE votes(
 INSERT INTO users (username,email,password) VALUES ('Abeer','abeerayyad2000@gmail.com',' $2b$10$iTuMndhX/x5iQdhuT7NVbOemk0q6xLpoPhujckDzMTphj/B2rQ1mG');
 INSERT INTO users (username,email,password) VALUES ('Aya','aya@gmail.com',' $2b$10$iTuMndhX/x5iQdhuT7NVbOemk0q6xLpoPhujckDzMTphj/B2rQ1mG');
 
-INSERT INTO posts (title,content_post,image_url,user_id) VALUES('DataGrip','DataGrip: the GUI tool for SQL and databases. Supports PostgreSQL, MySQL, SQL Server, Oracle, and others. Key features: smart coding assistance, powerful navigation, configurable export. Works on Win, Mac, and Linux.','https://external-preview.redd.it/zQjApYpllYtgki6hkeRIU8EI5J5Kx8ecCex5nr8w_UI.jpg?width=640&crop=smart&auto=webp&v=enabled&s=17a6194b0c1176ce102c2e895466a1507007a30f',1);
+INSERT INTO posts (title,content_post,image_url,user_id) VALUES('DataGrip','DataGrip: the GUI tool for SQL and databases.','https://external-preview.redd.it/zQjApYpllYtgki6hkeRIU8EI5J5Kx8ecCex5nr8w_UI.jpg?width=640&crop=smart&auto=webp&v=enabled&s=17a6194b0c1176ce102c2e895466a1507007a30f',1);
 INSERT INTO posts (title,content_post,image_url,user_id) VALUES('DataGrip','DataGrip: the GUI tool for SQL and databases. Supports PostgreSQL, MySQL, SQL Server, Oracle, and others. Key features: smart coding assistance, powerful navigation, configurable export. Works on Win, Mac, and Linux.','https://external-preview.redd.it/zQjApYpllYtgki6hkeRIU8EI5J5Kx8ecCex5nr8w_UI.jpg?width=640&crop=smart&auto=webp&v=enabled&s=17a6194b0c1176ce102c2e895466a1507007a30f',2);
 
--- INSERT INTO comments (comment,user_id,post_id) VALUES('Great post!',1,1);
+INSERT INTO comments (comment,user_id,post_id) VALUES('Great post!',1,1);
+INSERT INTO comments (comment,user_id,post_id) VALUES('HELLO !',1,1);
+INSERT INTO comments (comment,user_id,post_id) VALUES('HELLO !',2,2);
+
+
 -- INSERT INTO votes (vote_type,user_id,post_id) VALUES('up',1,1);
 
 

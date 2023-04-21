@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-disable no-restricted-globals */
-const { deletePostQuery } = require('../database/querirs');
+const { deletePostQuery } = require('../database/queries');
 
 // eslint-disable-next-line no-unused-vars
 const deletePost = (req, res) => {

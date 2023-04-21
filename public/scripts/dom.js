@@ -1,6 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 const postContent = document.querySelector('.post-content');
 // const voteContent = document.querySelector('.vote-content');
+const usernameLogin = document.querySelector('.username');
+const postsContainer = document.querySelector('.posts');
 
 const createElement = (tagName, className, parent) => {
   const element = document.createElement(tagName);
@@ -9,8 +12,9 @@ const createElement = (tagName, className, parent) => {
   return element;
 };
 const createDom = (data) => {
-  // postContent.textContent = '';
-  const createPost = createElement('div', 'create-post', postContent);
+  // usernameLogin.textContent = data.username;
+  // postsContainer.innerHTML = '';
+  const createPost = createElement('div', 'create-post', postsContainer);
   createPost.textContent = '';
   const voteContent = createElement('div', 'vote-content', createPost);
   const postDetails = createElement('div', 'post-details', createPost);
@@ -42,7 +46,6 @@ const createDom = (data) => {
   const imgPost = createElement('div', 'image-post', postDetails);
   const imgUrl = createElement('img', '', imgPost);
   imgUrl.src = data.image_url;
-
   const commentsEditDelete = createElement(
     'div',
     'comments-edit-delete',
@@ -51,6 +54,10 @@ const createDom = (data) => {
   const commentsMain = createElement('div', 'comments', commentsEditDelete);
   const commentIcon = createElement('img', '', commentsMain);
   commentIcon.src = '../img/comments.png';
+  commentsMain.addEventListener('click', () => {
+    const toggleComments = document.querySelector('.comment-container');
+    toggleComments.classList.toggle('show');
+  });
 
   const commentText = createElement('p', '', commentsMain);
   commentText.textContent = 'Comments';
@@ -70,10 +77,24 @@ const createDom = (data) => {
 
   const deleteText = createElement('p', '', deleteMain);
   deleteText.textContent = 'Delete';
+
+  const commentsContainer = createElement('div', 'comment-container', postDetails);
+  const commentsText = createElement('textarea', '', commentsContainer);
+  commentsText.setAttribute('name', 'comment');
+  commentsText.setAttribute('placeholder', 'Enter Your Comment');
+
+  commentSubmit = createElement('button', 'comment-submit', commentsContainer);
+  commentSubmit.textContent = 'Send';
+  commentSubmit.addEventListener('click', () => {
+    fetchComments('/comments', { comment: commentsText.value, postId: data.id });
+  });
 };
 // eslint-disable-next-line no-unused-vars
 const createPost = (allData) => {
   allData.result.forEach((data) => {
     createDom(data);
   });
+};
+const filterPost = (allData) => {
+  createDom(allData);
 };

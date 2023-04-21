@@ -2,14 +2,14 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 const { join } = require('path');
-const { addPostQuery } = require('../database/querirs');
+const { addPostQuery } = require('../database/queries');
 
 const addNewPost = (req, res) => {
   res.sendFile(
     join(__dirname, '..', '..', 'public', 'html', 'addPostForm.html'),
   );
 };
-const addPost = (req, res) => {
+const addPost = (req, res, next) => {
   const { title, content_post, image_url } = req.body;
 
   addPostQuery({
