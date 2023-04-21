@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 const postContent = document.querySelector('.post-content');
@@ -13,7 +14,6 @@ const createElement = (tagName, className, parent) => {
 };
 const createDom = (data) => {
   // usernameLogin.textContent = data.username;
-  // postsContainer.innerHTML = '';
   const createPost = createElement('div', 'create-post', postsContainer);
   createPost.textContent = '';
   const voteContent = createElement('div', 'vote-content', createPost);
@@ -67,6 +67,9 @@ const createDom = (data) => {
   editIcon.src = '../img/edit.png';
   const editText = createElement('p', '', editMain);
   editText.textContent = 'Edit';
+  editMain.addEventListener('click', () => {
+    location.href = `/editPost/${data.id}`;
+  });
 
   const deleteMain = createElement('div', 'delete', commentsEditDelete);
   const deleteIcon = createElement('img', '', deleteMain);
@@ -91,6 +94,7 @@ const createDom = (data) => {
 };
 // eslint-disable-next-line no-unused-vars
 const createPost = (allData) => {
+  postsContainer.innerHTML = '';
   allData.result.forEach((data) => {
     createDom(data);
   });

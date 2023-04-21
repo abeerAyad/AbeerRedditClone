@@ -10,8 +10,6 @@ const showHomePost = (req, res) => {
 const getPost = (req, res) => {
   getPostQuery()
     .then((data) => {
-      // console.log(data.rows);
-      // data.rows.reduce((a, b) => console.log(...a+...b))
       res.json({ result: data.rows });
     })
     .catch(() => {
