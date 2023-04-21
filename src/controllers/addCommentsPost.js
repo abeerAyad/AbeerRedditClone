@@ -9,6 +9,7 @@ const addCommentsPost = (req, res, next) => {
   commentSchema.validateAsync({ comment })
     .then(() => addCommentsQuery({ comment, user_id: req.user.id, post_id: postId }))
     .then((data) => {
+      console.log( data.rows[0]);
       res.status(201)
         .json({
           error: false,

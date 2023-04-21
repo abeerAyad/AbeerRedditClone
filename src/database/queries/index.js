@@ -1,10 +1,10 @@
-const getPostQuery = require('./getPostQuery');
-const addPostQuery = require('./addPostQuery');
-const deletePostQuery = require('./deletePostQuery');
-const userSignupQuery = require('./signupQuery');
-const userLoginQuery = require('./loginQuery');
-const searchPostQuery = require('./searchPostQuery');
-const addCommentsQuery = require('./addCommentsQuery');
+const getPostQuery = require('./posts/getPostQuery');
+const addPostQuery = require('./posts/addPostQuery');
+const deletePostQuery = require('./posts/deletePostQuery');
+const userSignupQuery = require('./authUser/signupQuery');
+const userLoginQuery = require('./authUser/loginQuery');
+const searchPostQuery = require('./posts/searchPostQuery');
+const addCommentsQuery = require('./comments/addCommentsQuery');
 
 module.exports = {
   getPostQuery,
