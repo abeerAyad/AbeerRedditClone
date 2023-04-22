@@ -59,6 +59,7 @@ const createDom = (data) => {
   const countComments = createElement('span', 'count', commentsMain);
   commentsMain.addEventListener('click', () => {
     commentsToggle = true;
+    console.log(`/comments/${data.id}`);
     const allComments = document.querySelector('.all-comment');
     if (commentsToggle) {
       fetchData(`/comments/${data.id}`).then((result) => {
@@ -76,10 +77,15 @@ const createDom = (data) => {
           createCommentTime.textContent = `${new Date(comment.created_at).getHours()} hr.ago`;
           const commentTextContent = createElement('p', 'comment-text', commentsContent);
           commentTextContent.textContent = comment.comment;
+          const deleteComment = createElement('img', 'delete delete-comment-icon', commentsContent);
+          deleteComment.src = '../img/delete.png';
+          deleteComment.addEventListener('click', () => {
+            deleteFetch(`/deleteComment/${comment.id}`);
+          });
         });
       });
     } else {
-      // commentsToggle = false;
+    //   // commentsToggle = false;
       allComments.textContent = '';
     }
   });
@@ -116,6 +122,7 @@ const createDom = (data) => {
   commentSubmit.addEventListener('click', () => {
     fetchComments('/comments', { comment: commentsText.value, postId: data.id });
   });
+  // const commentValidate = createElement('p', 'comment-validate', postDetails);
   const allcomments = createElement('div', 'all-comment', postDetails);
 };
 // eslint-disable-next-line no-unused-vars

@@ -21,7 +21,7 @@ header {
 }
 
 header nav {
- height: 65px;
+ height: 70px;
  display: flex;
  justify-content: space-between;
  align-items: center;
@@ -30,7 +30,6 @@ header nav {
 
 header nav .logo,
 header nav .home {
-    /* background-color: blue; */
     display: flex;
     align-items: center;
 }
@@ -46,11 +45,10 @@ header nav .logo a {
     margin-left: 10px;
 }
 header nav .home {
-    width: 350px;
+    width: 300px;
     height: 40px;
     border-radius: 5px;
     transition: all 0.3s ease;
-    margin-right: 100px;
     border: 1px solid #ccc;
 }
 
@@ -259,8 +257,9 @@ header nav .home a {
     transition: all 0.3s ease-in;
     padding: 10px;
     border-left: 2px solid #898989;
+    position: relative;
 }
-.content-comments:hover {
+.content-comments:nth-of-type(odd) {
     background-color: #c1cbec;
 }
 .user-info-comment {
@@ -281,4 +280,15 @@ header nav .home a {
 .content-comments .comment-text {
     margin-left: 50px;
     font-size: 17px;
+}
+
+.delete-comment-icon {
+    width: 20px;
+    height: 20px;
+    /* margin-left: 50px; */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }

@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 fetchData('/posts').then((data) => {
-  createPost(data)
-  
-
+  createPost(data);
 });
 
 const addPostBtn = document.querySelector('.add-post-btn');

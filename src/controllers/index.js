@@ -9,6 +9,7 @@ const searchPost = require('./searchPost');
 const addCommentsPost = require('./comments/addCommentsPost');
 const getPostById = require('./getPostById');
 const getCommentsPosts = require('./comments/getPostComments');
+const deleteCommentById = require('./comments/deleteCommentById');
 
 module.exports = {
   getPost,
@@ -26,4 +27,5 @@ module.exports = {
   addCommentsPost,
   getPostById,
   getCommentsPosts,
+  deleteCommentById,
 };
