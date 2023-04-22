@@ -120,7 +120,7 @@ header nav .home a {
     align-items: center;
 }
 .create-post {
-    padding: 12px 15px;
+    padding: 12px 15px 20px;
     margin-top: 30px;
     transition: all 0.3s ease-in-out;
 }
@@ -184,11 +184,12 @@ header nav .home a {
 }
 .post-details .image-post img {
     width: 100%;
+    margin: 10px 0 12px 0;
 }
 .vote-content img,
 .comments-edit-delete  img{
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     cursor: pointer;
 }
 
@@ -196,14 +197,16 @@ header nav .home a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 610px;
+    margin-bottom: 10px;
 }
 
 .comments-edit-delete div {
-    width: 20%;
+    width: fit-content;
     margin-right: 30px;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 10px 30px 10px 10px;
     cursor: pointer;
     border-radius: 6px;
     transition: all 0.3s ease-in-out;
@@ -213,7 +216,7 @@ header nav .home a {
 }
 
 .comments-edit-delete div p {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     margin-left: 10px;
     color: #898989;
@@ -232,18 +235,50 @@ header nav .home a {
     border-radius: 6px;
     border: 1px solid #313639;
 }
-.comment-container textarea:focus {
-    border: 1px solid #FF4500;
-}
+
 
 .comment-container button {
- padding: 10px 40px;
+ padding: 12px 40px;
  background-color: #fff;
- border: 1px solid #FF4500;
- color: #FF4500;
+ border: 1px solid #313639;
+ color: #333;
  margin-left: 30px;
  border-radius: 5px;
- font-size: 20px;
+ font-size: 18px;
  font-weight: 600;
  cursor: pointer;
+ transition: all 0.3s ease-in;
+}
+.comment-container button:hover {
+    background-color: #ccc;
+}
+
+.content-comments {
+    margin-top: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in;
+    padding: 10px;
+    border-left: 2px solid #898989;
+}
+.content-comments:hover {
+    background-color: #c1cbec;
+}
+.user-info-comment {
+    display: flex;
+    align-items: center;
+}
+.user-info-comment .user-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-info-comment .name-user {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.content-comments .comment-text {
+    margin-left: 50px;
+    font-size: 17px;
 }

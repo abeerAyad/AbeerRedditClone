@@ -9,6 +9,7 @@ const {
   searchPost, addCommentsPost, editPost,
   getEditPost,
   getPostById,
+  getCommentsPosts,
 
 } = require('../controllers');
 const { checkAuth, checkAuthRedirect } = require('../middlewares');
@@ -28,5 +29,6 @@ router.get('/getPost/:id', getPostById);
 
 router.delete('/delete/:id', deletePost);
 router.post('/comments', addCommentsPost);
+router.get('/comments/:id', getCommentsPosts);
 
 module.exports = router;
