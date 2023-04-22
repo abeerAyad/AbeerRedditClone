@@ -2,10 +2,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 const postContent = document.querySelector('.post-content');
+const defaultAvatar = ['../img/avatar_default_0.png', '../img/avatar_default_1.png', '../img/avatar_default_2.png', '../img/avatar_default_2.png'];
+
 // const voteContent = document.querySelector('.vote-content');
 const usernameLogin = document.querySelector('.username');
 const postsContainer = document.querySelector('.posts');
-
+let commentsToggle = false;
 const createElement = (tagName, className, parent) => {
   const element = document.createElement(tagName);
   element.className = className;
@@ -54,9 +56,38 @@ const createDom = (data) => {
   const commentsMain = createElement('div', 'comments', commentsEditDelete);
   const commentIcon = createElement('img', '', commentsMain);
   commentIcon.src = '../img/comments.png';
+  const countComments = createElement('span', 'count', commentsMain);
   commentsMain.addEventListener('click', () => {
-    const toggleComments = document.querySelector('.comment-container');
-    toggleComments.classList.toggle('show');
+    commentsToggle = true;
+    console.log(`/comments/${data.id}`);
+    const allComments = document.querySelector('.all-comment');
+    if (commentsToggle) {
+      fetchData(`/comments/${data.id}`).then((result) => {
+        countComments.textContent = result.comments.length;
+        allComments.textContent = '';
+        result.comments.forEach((comment) => {
+          const randomAvatar = Math.floor(Math.random() * defaultAvatar.length);
+          const commentsContent = createElement('div', 'content-comments', allComments);
+          const userInfoComment = createElement('div', 'user-info-comment', commentsContent);
+          const userImg = createElement('img', 'user-img', userInfoComment);
+          userImg.src = defaultAvatar[randomAvatar];
+          const nameUser = createElement('h5', 'name-user', userInfoComment);
+          nameUser.textContent = comment.username;
+          const createCommentTime = createElement('span', 'comment-create', userInfoComment);
+          createCommentTime.textContent = `${new Date(comment.created_at).getHours()} hr.ago`;
+          const commentTextContent = createElement('p', 'comment-text', commentsContent);
+          commentTextContent.textContent = comment.comment;
+          const deleteComment = createElement('img', 'delete delete-comment-icon', commentsContent);
+          deleteComment.src = '../img/delete.png';
+          deleteComment.addEventListener('click', () => {
+            deleteFetch(`/deleteComment/${comment.id}`);
+          });
+        });
+      });
+    } else {
+    //   // commentsToggle = false;
+      allComments.textContent = '';
+    }
   });
 
   const commentText = createElement('p', '', commentsMain);
@@ -91,6 +122,8 @@ const createDom = (data) => {
   commentSubmit.addEventListener('click', () => {
     fetchComments('/comments', { comment: commentsText.value, postId: data.id });
   });
+  // const commentValidate = createElement('p', 'comment-validate', postDetails);
+  const allcomments = createElement('div', 'all-comment', postDetails);
 };
 // eslint-disable-next-line no-unused-vars
 const createPost = (allData) => {

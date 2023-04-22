@@ -4,6 +4,7 @@ const usernameError = document.querySelector('.username');
 const emailError = document.querySelector('.email');
 const passwordError = document.querySelector('.password');
 const confirmPasswordError = document.querySelector('.confirmPassword');
+// const commentValidate = document.querySelector('.comment-validate');
 
 const customErrors = (errors) => {
   errors.forEach((error) => {
@@ -21,6 +22,9 @@ const customErrors = (errors) => {
 
     if (error.context.label === 'confirmPassword') {
       domError(confirmPasswordError, error.message);
+    }
+    if (error.context.label === 'comment') {
+      // domError(commentValidate, error.message);
     }
   });
 };

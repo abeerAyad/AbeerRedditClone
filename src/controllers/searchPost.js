@@ -1,12 +1,10 @@
 const { searchPostQuery } = require('../database/queries');
 
-const searchPost = (req, res) => {
-  console.log(req.body);
+const searchPost = (req, res, next) => {
   const { searchTitle } = req.body;
   searchPostQuery(searchTitle).then((data) => {
-    console.log(data.rows);
     res.json({ result: data.rows });
-  }).catch((err) => console.log(err));
+  }).catch((err) => next(err));
 };
 
 module.exports = searchPost;

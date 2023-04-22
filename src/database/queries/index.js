@@ -7,6 +7,7 @@ const searchPostQuery = require('./posts/searchPostQuery');
 const addCommentsQuery = require('./comments/addCommentsQuery');
 const editPostQuery = require('./posts/editPostQuery');
 const getPostByIdQuery = require('./posts/getPostByIdQuery');
+const deleteCommentByIdQuery = require('./comments/deleteCommentByIdQuery');
 
 module.exports = {
   getPostQuery,
@@ -18,4 +19,5 @@ module.exports = {
   addCommentsQuery,
   editPostQuery,
   getPostByIdQuery,
+  deleteCommentByIdQuery,
 };

@@ -12,6 +12,6 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        // "eslint camelcase": "false"
+        "linebreak-style": 0
     }
 }

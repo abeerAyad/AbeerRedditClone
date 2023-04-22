@@ -1,5 +1,9 @@
-const getPostCommentsQuery = require("../../database/queries/comments/getPostComments");
+const getPostCommentsQuery = require('../../database/queries/comments/getPostComments');
 
-const getPostComments = (req, res) => {
-getPostCommentsQuery(req.)
+const getCommentsPosts = (req, res, next) => {
+  const postId = req.params.id;
+  getPostCommentsQuery(postId).then((data) => {
+    res.json({ comments: data.rows });
+  }).catch((err) => next(err));
 };
+module.exports = getCommentsPosts;

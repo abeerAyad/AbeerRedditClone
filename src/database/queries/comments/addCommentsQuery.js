@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-const connection = require("../../config/connection");
+const connection = require('../../config/connection');
 
 /* eslint-disable camelcase */
 const addCommentsQuery = ({ comment, user_id, post_id }) => {
