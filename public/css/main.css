@@ -118,8 +118,9 @@ header nav .home a {
     width: 50%;
 }
 .create-post {
-    padding: 12px 15px 20px;
+    padding: 0;
     margin-top: 30px;
+    overflow: hidden;
     transition: all 0.3s ease-in-out;
 }
 
@@ -153,6 +154,17 @@ header nav .home a {
 
 .create-post .vote-content {
     padding-right: 15px;
+    padding: 10px 12px 0;
+    background-color: #c1cbec;
+    cursor: pointer;
+}
+
+.count-vote {
+    padding-left: 4px;
+}
+
+.post-details {
+    padding: 12px 15px 20px;
 }
 .post-details .time-user-post {
     display: flex;

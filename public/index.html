@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Reddit</title>
     <link rel="shortcut icon" href="../img/reddit-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="../css/auth.css">
 </head>
 
@@ -16,24 +20,50 @@
             <img src="../img/Reddit_Lockup_OnWhite.svg" alt="" class="reddit">
         </div>
         <div class="auth-form">
-            <h2>Sign up</h2>
-            <div class="form">
-                <label for="username">User Name</label>
-                <input type="text" name="username" id="username" placeholder="Enter Your User Name">
-                <div class="username error"></div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email-user" placeholder="Enter Your Email">
-                <div class="email error"></div>
-                <label for="email">Password</label>
-                <input type="password" name="password" id="password-user" placeholder="Enter Your Password">
-                <div class="password error"></div>
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" name="confirmPassword" id="confirmPassword-user" placeholder="Enter Your Confirm Password">
-                <div class="confirmPassword error"></div>
 
-                <button type="button" class="submit-data">Sign Up</button>
-                <span class="back-form">Already a user<a href="/login">LOGIN</a></span>
+        <div class="wrapper">
+            <header>Signup Form</header>
+            <div class="form">
+                <div class="field username-field">
+                    <div class="input-area">
+                        <input type="text" name="username" id="username" placeholder="User Name">
+                        <i class="fa-solid fa-user icon"></i>
+                        <i class="error error-icon fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="error error-txt">Username can't be blank</div>
+                </div>
+
+                <div class="field email-field">
+                    <div class="input-area">
+                        <input type="text" name="email" id="email-user" placeholder="Email Address">
+                        <i class="icon fas fa-envelope"></i>
+                        <i class="error error-icon fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="error error-txt">Email can't be blank</div>
+                </div>
+                <div class="field password-field">
+                    <div class="input-area">
+                        <input type="password"  name="password" id="password-user" placeholder="Password">
+                        <i class="icon fas fa-lock"></i>
+                        <i class="error error-icon fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="error error-txt">Password can't be blank</div>
+                </div>
+
+                <div class="field confirm-password-field">
+                    <div class="input-area">
+                        <input type="password" name="confirmPassword" id="confirmPassword-user" placeholder="Confirm Password">
+                        <i class="fa-solid fa-circle-check icon"></i>
+                        <i class="error error-icon fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="error error-txt">The password and confirm password fields do not match.</div>
+                </div>
+
+                <div class="pass-txt"><a href="/">Forgot password?</a></div>
+                <input type="button" class="submit-data" value="Signup">
             </div>
+            <div class="sign-txt">Already a user <a href="/login">Login</a></div>
+        </div>
         </div>
     </div>
     <script src="./scripts/fetch.js"></script>
