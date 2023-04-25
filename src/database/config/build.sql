@@ -37,14 +37,14 @@ CREATE TABLE votes(
 );
 
 INSERT INTO users (username,email,password) VALUES ('Abeer','abeerayyad2000@gmail.com',' $2b$10$iTuMndhX/x5iQdhuT7NVbOemk0q6xLpoPhujckDzMTphj/B2rQ1mG');
-INSERT INTO users (username,email,password) VALUES ('Aya','aya@gmail.com',' $2b$10$iTuMndhX/x5iQdhuT7NVbOemk0q6xLpoPhujckDzMTphj/B2rQ1mG');
+INSERT INTO users (username,email,password) VALUES ('Sally','saly@gmail.com',' $2b$10$iTuMndhX/x5iQdhuT7NVbOemk0q6xLpoPhujckDzMTphj/B2rQ1mG');
 
-INSERT INTO posts (title,content_post,image_url,user_id) VALUES('DataGrip','DataGrip: the GUI tool for SQL and databases.','https://external-preview.redd',1);
-INSERT INTO posts (title,content_post,image_url,user_id) VALUES('DataGrip','DataGrip: the GUI tool for SQL and databases. Supports PostgreSQL, MySQL','https://external-preview.redd.it/',2);
+INSERT INTO posts (title,content_post,image_url,user_id) VALUES('TEsssT','DeadLineee','https://img.universitystudent.org/1/4/3337/when-you-discover-the-deadline-is-tomorrow-meme.jpg',2);
+INSERT INTO posts (title,content_post,image_url,user_id) VALUES('I want graduateee','','https://img.universitystudent.org/1/4/3281/university-life-first-semester-last-semester-meme.jpg',1);
 
 INSERT INTO comments (comment,user_id,post_id) VALUES('Great post!',1,1);
-INSERT INTO comments (comment,user_id,post_id) VALUES('HELLO !',1,1);
-INSERT INTO comments (comment,user_id,post_id) VALUES('HELLO !',2,2);
+INSERT INTO comments (comment,user_id,post_id) VALUES('Hellooo!',1,1);
+INSERT INTO comments (comment,user_id,post_id) VALUES('Okayyy!',2,2);
 
 
 INSERT INTO votes (vote_type,user_id,post_id) VALUES('up',1,1);

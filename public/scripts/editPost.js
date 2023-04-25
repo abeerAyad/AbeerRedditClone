@@ -6,6 +6,9 @@ let title = document.getElementById('title');
 let image_url = document.getElementById('imgUrl');
 let content_post = document.getElementById('contentPost');
 const editPost = document.querySelector('.editPost');
+const userData = JSON.parse(localStorage.getItem('userData'));
+const user = document.querySelector('.user');
+user.textContent = userData.username;
 
 fetchData(`/getPost/${id}`).then((data) => {
   title.value = data[0].title;
@@ -19,5 +22,5 @@ editPost.addEventListener('click', () => {
   content_post = content_post.value;
   editFetch(`/editPostData/${id}`, {
     title, image_url, content_post,
-  }).catch((err) => console.log(err));
+  }).then((data) => console.log(data.error)).catch((err) => console.log(err));
 });

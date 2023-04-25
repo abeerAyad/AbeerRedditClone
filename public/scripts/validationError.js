@@ -1,7 +1,9 @@
+/* eslint-disable no-multi-assign */
 /* eslint-disable max-len */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
+const titleError = document.querySelector('.error-title');
 
 const usernameInput = document.querySelector('#username');
 const emailInput = document.querySelector('#email-user');
@@ -58,12 +60,17 @@ const customErrors = (errors) => {
       (passwordInput.value !== confirmPasswordInput.value) ? cField.classList.add('shake', 'error') : checkValid(confirmPasswordInput, cField);
       confirmPasswordInput.onkeyup = () => checkValid(confirmPasswordInput, cField);
     }
+
+    // if (error.context.label === 'title') {
+    //   domError(titleError, 'Title is not allowed to be empty');
+    //   titleError.classList.add('error-txt');
+    // }
   });
 };
 
-setTimeout(() => {
-  eField.classList.remove('shake');
-  pField.classList.remove('shake');
-  uField.classList.remove('shake');
-  cField.classList.remove('shake');
-}, 500);
+// setTimeout(() => {
+//   eField.classList.remove('shake');
+//   pField.classList.remove('shake');
+//   uField.classList.remove('shake');
+//   cField.classList.remove('shake');
+// }, 500);

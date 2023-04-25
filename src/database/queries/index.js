@@ -13,7 +13,6 @@ const {
   voteQuery, deleteVoteQuery, updateVoteQuery, getVotesQuery,
 } = require('./votes');
 
-
 module.exports = {
   getPostQuery,
   addPostQuery,

@@ -10,27 +10,23 @@ const fetchPost = (url, data) => fetch(url, {
   body: JSON.stringify(data),
 })
   .then((res) => res.json())
-  .then(() => {
-    location.href = '/post';
-  })
-  .catch((err) => res.status(500).json({ msg: 'Internal Server Error!' }));
+  .then(() => location.href = '/post');
 
 deleteFetch = (url) => fetch(url, { method: 'DELETE' });
 
-authFetch = (url, data) => {
-  fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  }).then((res) => res.json()).then((result) => {
-    if (result.error) {
-      customErrors(result.data.message);
-    } else {
-      location.href = '/post';
-    }
-  })
-    .catch((err) => console.log(err, 'errors'));
-};
+authFetch = (url, data) => fetch(url, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data),
+}).then((res) => res.json()).then((result) => {
+  if (result.error) {
+    customErrors(result.data.message);
+  } else {
+    localStorage.setItem('userData', JSON.stringify(data));
+    location.href = '/post';
+  }
+})
+  .catch((err) => console.log(err, 'errors'));
 
 logoutFetch = (url) => {
   fetch(url).then((res) => res.json())

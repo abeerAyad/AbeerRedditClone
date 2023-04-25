@@ -358,3 +358,7 @@ animation: ring-button 3s infinite;
         transform: scale(1);
     }
 }
+
+.user {
+    font-size: 18px;
+}

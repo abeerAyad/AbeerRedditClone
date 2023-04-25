@@ -13,7 +13,6 @@ const {
   deleteCommentById,
   getUserById,
   votePost,
-  getCountComments,
 } = require('../controllers');
 const { checkAuth, checkAuthRedirect } = require('../middlewares');
 
@@ -24,7 +23,6 @@ router.get('/posts', getPost);
 router.post('/search', searchPost);
 router.get('/user/:id', getUserById);
 router.get('/addpost', checkAuthRedirect, addNewPost);
-router.get('/count/:id', getCountComments);
 router.use(checkAuth);
 router.get('/comments/:id', getCommentsPosts);
 router.get('/editPost/:id', checkAuthRedirect, getEditPost);

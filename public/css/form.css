@@ -42,3 +42,10 @@ button:hover {
     background-color: #0079d3;
     color: #fff;
 }
+
+.error-txt {
+    color: #dc3545;
+    text-align: left;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
