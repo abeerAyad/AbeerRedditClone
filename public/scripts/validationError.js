@@ -2,11 +2,7 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-// const usernameError = document.querySelector('.username');
-// const emailError = document.querySelector('.email');
-// const passwordError = document.querySelector('.password');
-// const confirmPasswordError = document.querySelector('.confirmPassword');
-// const commentValidate = document.querySelector('.comment-validate');
+
 const usernameInput = document.querySelector('#username');
 const emailInput = document.querySelector('#email-user');
 const passwordInput = document.querySelector('#password-user');
@@ -18,8 +14,8 @@ const pField = document.querySelector('.password-field');
 const cField = document.querySelector('.confirm-password-field');
 
 function checkEmail() { // checkEmail function
-  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; // pattern for validate email
-  if (!emailInput.value.match(pattern)) { // if pattern not matched then add error and remove valid class
+  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!emailInput.value.match(pattern)) {
     eField.classList.add('error');
     eField.classList.remove('valid');
     const errorTxt = eField.querySelector('.error-txt');
@@ -27,6 +23,7 @@ function checkEmail() { // checkEmail function
   } else {
     eField.classList.remove('error');
     eField.classList.add('valid');
+    errorTxt.innerText = '';
   }
 }
 
@@ -44,10 +41,7 @@ const customErrors = (errors) => {
   errors.forEach((error) => {
     if (error.context.label === 'username') {
       (usernameInput.value === '') ? uField.classList.add('shake', 'error') : checkValid(usernameInput, uField);
-
-      usernameInput.onkeyup = () => {
-        checkValid(usernameInput, uField);
-      }; // calling checkPassword function on pass input keyup
+      usernameInput.onkeyup = () => checkValid(usernameInput, uField); // calling checkPassword function on pass input keyup
     }
 
     if (error.context.label === 'email') {
@@ -57,16 +51,12 @@ const customErrors = (errors) => {
 
     if (error.context.label === 'password') {
       (passwordInput.value === '') ? pField.classList.add('shake', 'error') : checkValid(passwordInput, pField);
-      passwordInput.addEventListener('keyup', () => {
-        checkValid(passwordInput, pField);
-      });
+      passwordInput.onkeyup = () => { checkValid(passwordInput, pField); };
     }
 
     if (error.context.label === 'confirmPassword') {
       (passwordInput.value !== confirmPasswordInput.value) ? cField.classList.add('shake', 'error') : checkValid(confirmPasswordInput, cField);
-      confirmPasswordInput.addEventListener('keyup', () => {
-        checkValid(confirmPasswordInput, cField);
-      });
+      confirmPasswordInput.onkeyup = () => checkValid(confirmPasswordInput, cField);
     }
   });
 };
