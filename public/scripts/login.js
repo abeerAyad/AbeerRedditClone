@@ -5,7 +5,7 @@ const submitBtn = document.querySelector('.submit-data');
 submitBtn.addEventListener('click', () => {
   const email = document.getElementById('email-user').value;
   const password = document.getElementById('password-user').value;
-  loginFetch('/login', {
+  authFetch('/login', {
     email, password,
   });
 });

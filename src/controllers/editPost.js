@@ -16,7 +16,6 @@ const editPost = (req, res, next) => {
     image_url,
   })
     .then((data) => {
-      // console.log(data.rows[0],'hhhhhhhhhhhhhhhhh');
       res.status(201).json({
         error: false,
         message: 'Edit Post successfully',
