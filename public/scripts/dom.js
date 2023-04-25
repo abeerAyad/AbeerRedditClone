@@ -171,9 +171,9 @@ const createDom = (data) => {
     }
   });
 
+  const validationComment = createElement('span', 'validationComment', postDetails);
   const allComments = createElement('div', 'all-comment', postDetails);
   allComments.id = `commentsAll-${data.id}`;
-  const validationComment = createElement('span', 'validationComment', postDetails);
 };
 
 const createPost = (allData) => {

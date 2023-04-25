@@ -1,30 +1,79 @@
+/* eslint-disable max-len */
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-const usernameError = document.querySelector('.username');
-const emailError = document.querySelector('.email');
-const passwordError = document.querySelector('.password');
-const confirmPasswordError = document.querySelector('.confirmPassword');
+// const usernameError = document.querySelector('.username');
+// const emailError = document.querySelector('.email');
+// const passwordError = document.querySelector('.password');
+// const confirmPasswordError = document.querySelector('.confirmPassword');
 // const commentValidate = document.querySelector('.comment-validate');
+const usernameInput = document.querySelector('#username');
+const emailInput = document.querySelector('#email-user');
+const passwordInput = document.querySelector('#password-user');
+const confirmPasswordInput = document.querySelector('#confirmPassword-user');
+
+const uField = document.querySelector('.username-field');
+const eField = document.querySelector('.email-field');
+const pField = document.querySelector('.password-field');
+const cField = document.querySelector('.confirm-password-field');
+
+function checkEmail() { // checkEmail function
+  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; // pattern for validate email
+  if (!emailInput.value.match(pattern)) { // if pattern not matched then add error and remove valid class
+    eField.classList.add('error');
+    eField.classList.remove('valid');
+    const errorTxt = eField.querySelector('.error-txt');
+    (emailInput.value !== '') ? errorTxt.innerText = 'Enter a valid email address' : errorTxt.innerText = "Email can't be blank";
+  } else {
+    eField.classList.remove('error');
+    eField.classList.add('valid');
+  }
+}
+
+function checkValid(input, field) {
+  if (input.value === '') {
+    field.classList.add('error');
+    field.classList.remove('valid');
+  } else {
+    field.classList.remove('error');
+    field.classList.add('valid');
+  }
+}
 
 const customErrors = (errors) => {
   errors.forEach((error) => {
     if (error.context.label === 'username') {
-      domError(usernameError, error.message);
+      (usernameInput.value === '') ? uField.classList.add('shake', 'error') : checkValid(usernameInput, uField);
+
+      usernameInput.onkeyup = () => {
+        checkValid(usernameInput, uField);
+      }; // calling checkPassword function on pass input keyup
     }
 
     if (error.context.label === 'email') {
-      domError(emailError, error.message);
+      (emailInput.value === '') ? eField.classList.add('shake', 'error') : checkEmail();
+      emailInput.onkeyup = () => { checkEmail(); };
     }
 
     if (error.context.label === 'password') {
-      domError(passwordError, error.message);
+      (passwordInput.value === '') ? pField.classList.add('shake', 'error') : checkValid(passwordInput, pField);
+      passwordInput.addEventListener('keyup', () => {
+        checkValid(passwordInput, pField);
+      });
     }
 
     if (error.context.label === 'confirmPassword') {
-      domError(confirmPasswordError, error.message);
-    }
-    if (error.context.label === 'comment') {
-      // domError(commentValidate, error.message);
+      (passwordInput.value !== confirmPasswordInput.value) ? cField.classList.add('shake', 'error') : checkValid(confirmPasswordInput, cField);
+      confirmPasswordInput.addEventListener('keyup', () => {
+        checkValid(confirmPasswordInput, cField);
+      });
     }
   });
 };
+
+setTimeout(() => {
+  eField.classList.remove('shake');
+  pField.classList.remove('shake');
+  uField.classList.remove('shake');
+  cField.classList.remove('shake');
+}, 500);
