@@ -15,9 +15,9 @@ const fetchPost = (url, data) => fetch(url, {
   })
   .catch((err) => res.status(500).json({ msg: 'Internal Server Error!' }));
 
-deleteFetch = (url) => fetch(url, { method: 'DELETE' }).then(() => location.reload());
+deleteFetch = (url) => fetch(url, { method: 'DELETE' });
 
-signupFetch = (url, data) => {
+authFetch = (url, data) => {
   fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -32,45 +32,19 @@ signupFetch = (url, data) => {
     .catch((err) => console.log(err, 'errors'));
 };
 
-loginFetch = (url, data) => {
-  fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  }).then((res) => res.json())
-    .then((result) => {
-      if (result.error) {
-        customErrors(result.data.message);
-      } else {
-        location.href = '/post';
-      }
-    })
-
-    .catch((err) => console.log(err));
-};
-
 logoutFetch = (url) => {
   fetch(url).then((res) => res.json())
     .then(() => location.href = '/login')
     .catch((err) => console.log(err));
 };
 
-fetchComments = (url, data) => {
-  fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
-};
-
-searchFetch = (url, data) => fetch(url, {
+allFetch = (url, data) => fetch(url, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(data),
-}).then((res) => res.json())
-  .catch((err) => console.log(err, 'fffffffffff'));
+})
+  .then((res) => res.json())
+  .catch((err) => console.log(err));
 
 editFetch = (url, data) => fetch(url, {
   method: 'PUT',
@@ -78,6 +52,4 @@ editFetch = (url, data) => fetch(url, {
   body: JSON.stringify(data),
 }).then((res) => res.json())
   .then(() => location.href = '/post')
-  .catch((err) => {
-    console.log(err);
-  });
+  .catch((err) => console.log(err));

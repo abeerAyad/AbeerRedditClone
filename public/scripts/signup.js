@@ -7,7 +7,7 @@ submitBtn.addEventListener('click', () => {
   const email = document.getElementById('email-user').value;
   const password = document.getElementById('password-user').value;
   const confirmPassword = document.getElementById('confirmPassword-user').value;
-  signupFetch('/signup', {
+  authFetch('/signup', {
     username, email, password, confirmPassword,
   });
 });

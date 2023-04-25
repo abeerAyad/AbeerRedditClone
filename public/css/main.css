@@ -81,7 +81,7 @@ header nav .home a {
 }
 
 .form .search-input {
-    padding: 15px 30px;
+    padding: 12px 30px;
     width: 400px;
     border: 1px solid #ccc;
     border-radius: 15px;
@@ -97,7 +97,7 @@ header nav .home a {
 }
 
 .post-content,.posts {
-    margin-top: 30px;
+    margin: 21px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +108,6 @@ header nav .home a {
 .create-post {
     display: flex;
     background-color: #fff;
-    width: 50%;
     border-radius: 6px;
     border: 1px solid #edeff1;
 }
@@ -116,6 +115,7 @@ header nav .home a {
     height: 65px;
     padding-left: 15px;
     align-items: center;
+    width: 50%;
 }
 .create-post {
     padding: 12px 15px 20px;
@@ -181,8 +181,10 @@ header nav .home a {
     width: 100%;  
 }
 .post-details .image-post img {
-    width: 100%;
+    width: 600px;
+    height: 400px;
     margin: 10px 0 12px 0;
+    border-radius: 2px;
 }
 .vote-content img,
 .comments-edit-delete  img{
@@ -216,7 +218,7 @@ header nav .home a {
 .comments-edit-delete div p {
     font-size: 16px;
     font-weight: 500;
-    margin-left: 10px;
+    margin-left: 5px;
     color: #898989;
 }
 
@@ -228,7 +230,7 @@ header nav .home a {
 
 .comment-container textarea {
     padding: 9px 12px;
-    width: 85%;
+    width: 96%;
     outline: none;
     border-radius: 6px;
     border: 1px solid #313639;
@@ -283,12 +285,64 @@ header nav .home a {
 }
 
 .delete-comment-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     /* margin-left: 50px; */
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+}
+
+
+lord-icon {
+width: 25px;
+height: 25px;
+}
+
+.comment-submit {
+    width: 32px;
+    height: 32px;
+}
+
+
+.count {
+    font-size: 17px;
+    color: #646d73;
+}
+
+.mainCommentIcon {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: 25px;
+z-index: 333;
+animation: ring-button 3s infinite;
+}
+
+.validationComment {
+    margin-top: 20px;
+}
+
+
+@keyframes ring-button {
+    0% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
