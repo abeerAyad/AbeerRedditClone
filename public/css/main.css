@@ -107,9 +107,11 @@ header nav .home a {
 .add-post,
 .create-post {
     display: flex;
+    margin-left: 50px;
     background-color: #fff;
     border-radius: 6px;
     border: 1px solid #edeff1;
+    position: relative;
 }
 .add-post {
     height: 65px;
@@ -361,4 +363,46 @@ animation: ring-button 3s infinite;
 
 .user {
     font-size: 18px;
+    cursor: pointer;
+}
+
+
+
+.profile-user-info {
+    position: absolute;
+    top: 210px;
+    left: 20px;
+    background-color: #fff;
+    width: 320px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.avatar {
+    width: 100%;
+    height: 100px;
+    background-color: #33a8ff;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    margin: 50px 0 0 20px;
+    border: 2px solid #fff;
+}
+.details {
+    /* display: flex;
+    justify-content: space-between; */
+    margin-top: 50px;
+    padding: 0 25px 20px;
+}
+.info .name {
+text-transform: capitalize;
+/* margin-bottom: 10px; */
+}
+
+.cake-day  {
+margin-top: 15px;
 }

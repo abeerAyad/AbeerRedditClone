@@ -5,7 +5,7 @@ const getProfileUser = (req, res, next) => {
   getProfileQuery(username)
     .then((data) => {
       console.log(data);
-      res.json(data.rows);
+      res.json({ result: data.rows });
     })
     .catch((err) => {
       next(err);
