@@ -12,13 +12,9 @@ const getUserByUsername = (req, res, next) => {
   const { username } = req.params;
   getUserInfo(username)
     .then((data) => {
-      console.log(data.rows[0]);
       res.json(data.rows[0]);
     })
-    .catch((err) => {
-      console.log(err);
-      next(err);
-    });
+    .catch((err) => next(err));
 };
 
 module.exports = { getUserByUsername, getProfilePages };

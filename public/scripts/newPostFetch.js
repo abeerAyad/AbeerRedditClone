@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable camelcase */
 const addPost = document.querySelector('.addPost');
-
+console.log(addPost);
 addPost.addEventListener('click', () => {
   const title = document.getElementById('title').value;
   const image_url = document.getElementById('imgUrl').value;

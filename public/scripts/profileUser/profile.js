@@ -6,9 +6,11 @@ const userLogged = JSON.parse(localStorage.getItem('userData'));
 const profileUserInfo = document.querySelector('.profile-user-info');
 
 const createDetailsUser = (data) => {
+  const randomAvatar = Math.floor(Math.random() * defaultAvatar.length);
+
   const avatar = createElement('div', 'avatar', profileUserInfo);
   const imgProfile = createElement('img', 'user-avatar', avatar);
-  imgProfile.src = '../img/avatar_default_5.png';
+  imgProfile.src = defaultAvatar[randomAvatar];
   const details = createElement('div', 'details', profileUserInfo);
   const infoProfile = createElement('div', 'info', details);
   const nameProfile = createElement('h4', 'name', infoProfile);

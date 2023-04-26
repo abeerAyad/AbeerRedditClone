@@ -7,7 +7,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 const postContent = document.querySelector('.post-content');
-const defaultAvatar = ['../img/avatar_default_0.png', '../img/avatar_default_1.png', '../img/avatar_default_2.png', '../img/avatar_default_2.png'];
+const defaultAvatar = ['../img/avatar_default_0.png', '../img/avatar_default_1.png', '../img/avatar_default_2.png', '../img/avatar_default_2.png', '../img/avatar_default_5.png'];
 const userData = JSON.parse(localStorage.getItem('userData'));
 const usernameLogin = document.querySelector('.username');
 const postsContainer = document.querySelector('.posts');
