@@ -7,6 +7,8 @@
     <title>Reddit Clone</title>
     <link rel="shortcut icon" href="../img/reddit-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/profile.css">
+
 </head>
 <body>
 <header>
@@ -32,19 +34,24 @@
 </header>
 
 <section class="post-content">
-    <div class="add-post">
-        <img src="../img/profile.png" alt="">
-        <button class="add-post-btn">Create Post</button>
+    <div class="profile-user-info"></div>
+    <div class="container-post">
+
+        <div class="add-post">
+            <img src="../img/profile.png" alt="">
+            <button class="add-post-btn">Create Post</button>
+        </div> 
+        <div class="posts"></div>
+
     </div>
     
-    <div class="posts"></div> 
     </section>
-    <div class="profile-user-info"></div>
 
     <script src="../scripts/fetch.js"></script>
     <script src="../scripts/dom.js"></script>
     <script src="../scripts/profileUser/profile.js"></script>
     <script src="../scripts/profileUser/user.js"></script>
+    <script src="../scripts/newPostFetch.js"></script>
     <script src="../scripts/logout.js"></script>
     <script src="../scripts/validationError.js"></script>
     <script src="../scripts/domError.js"></script>

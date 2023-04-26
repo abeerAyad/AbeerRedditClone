@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-const addPost = document.querySelector('.add-post');
+const postAdd = document.querySelector('.add-post');
 const usernameProfile = JSON.parse(localStorage.getItem('username-post'));
 const userLogged = JSON.parse(localStorage.getItem('userData'));
 const profileUserInfo = document.querySelector('.profile-user-info');
@@ -24,7 +24,7 @@ const createDetailsUser = (data) => {
 };
 
 if (usernameProfile !== userLogged.username) {
-  addPost.style.display = 'none';
+  postAdd.style.display = 'none';
 } else {
-  addPost.style.display = 'flex';
+  postAdd.style.display = 'flex';
 }
