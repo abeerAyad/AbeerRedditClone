@@ -11,7 +11,7 @@ const getPostById = require('./getPostById');
 const getCommentsPosts = require('./comments/getPostComments');
 const deleteCommentById = require('./comments/deleteCommentById');
 const votePost = require('./votes/votePost');
-const {getUserByUsername,getProfilePages} = require('./users/getUserByUsername');
+const { getUserByUsername, getProfilePages } = require('./users/getUserByUsername');
 const getProfileUser = require('./users/getProfile');
 
 module.exports = {

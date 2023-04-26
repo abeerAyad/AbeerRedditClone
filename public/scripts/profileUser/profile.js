@@ -21,7 +21,6 @@ const createDetailsUser = (data) => {
   titleDay.textContent = 'Cake Day';
   const day = createElement('p', 'day', cakeDay);
   day.textContent = data.created_at.split(':')[0].slice(0, 10);
-  console.log(data.created_at.split(':')[0].slice(0, 10));
 };
 
 if (usernameProfile !== userLogged.username) {
