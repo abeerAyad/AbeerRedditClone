@@ -32,16 +32,18 @@ const createCommentsContent = (allComments, comment, countComments) => {
   createCommentTime.textContent = getTimeSincePost(comment.created_at);
   const commentTextContent = createElement('p', 'comment-text', commentsContent);
   commentTextContent.textContent = comment.comment;
-  const deleteComment = createElement('lord-icon', 'delete delete-comment-icon', commentsContent);
-  deleteComment.src = 'https://cdn.lordicon.com/kfzfxczd.json';
-  deleteComment.setAttribute('trigger', 'hover');
-  deleteComment.addEventListener('click', () => {
-    if (comment.username ===userData.username) {
-      deleteFetch(`/deleteComment/${comment.id}`);
-      countComments.textContent = +countComments.textContent - 1;
-      commentsContent.remove();
-    }
-  });
+  if (comment.username === userData.username) {
+    const deleteComment = createElement('lord-icon', 'delete delete-comment-icon', commentsContent);
+    deleteComment.src = 'https://cdn.lordicon.com/kfzfxczd.json';
+    deleteComment.setAttribute('trigger', 'hover');
+    deleteComment.addEventListener('click', () => {
+      if (comment.username === userData.username) {
+        deleteFetch(`/deleteComment/${comment.id}`);
+        countComments.textContent = +countComments.textContent - 1;
+        commentsContent.remove();
+      }
+    });
+  }
 };
 
 const createDom = (data) => {
@@ -77,7 +79,9 @@ const createDom = (data) => {
   postedUser.textContent = 'Posted By ';
   const userName = createElement('span', 'name-user', postedUser);
   userName.textContent = data.username;
-
+  userName.addEventListener('click', () => {
+    location.href = `/profile/${data.username}`;
+  });
   const timePosted = createElement('p', 'time', timeUserPost);
   timePosted.textContent = getTimeSincePost(data.created_at);
   timePosted.title = `${new Date(data.created_at)}`;
@@ -126,33 +130,36 @@ const createDom = (data) => {
 
   const commentText = createElement('p', '', commentsMain);
   commentText.textContent = 'Comments';
+  if (data.username === userData.username) {
+    const editMain = createElement('div', 'edit', commentsEditDelete);
 
-  const editMain = createElement('div', 'edit', commentsEditDelete);
-  const editIcon = createElement('img', '', editMain);
-  editIcon.src = '../img/edit.png';
-  const editText = createElement('p', '', editMain);
-  editText.textContent = 'Edit';
-  editMain.addEventListener('click', () => {
-    if (data.username === userData.username) {
-      location.href = `/editPost/${data.id}`;
-    }
-  });
+    const editIcon = createElement('img', '', editMain);
+    editIcon.src = '../img/edit.png';
+    const editText = createElement('p', '', editMain);
+    editText.textContent = 'Edit';
+    editMain.addEventListener('click', () => {
+      if (data.username === userData.username) {
+        location.href = `/editPost/${data.id}`;
+      }
+    });
+  }
 
-  const deleteMain = createElement('div', 'delete', commentsEditDelete);
-  const deleteIcon = createElement('lord-icon', '', deleteMain);
-  deleteIcon.src = 'https://cdn.lordicon.com/kfzfxczd.json';
-  deleteIcon.setAttribute('trigger', 'hover');
+  if (data.username === userData.username) {
+    const deleteMain = createElement('div', 'delete', commentsEditDelete);
 
-  deleteMain.addEventListener('click', () => {
-    if (data.username === userData.username) {
-      deleteFetch(`/delete/${data.id}`);
-      createPost.remove();
-    }
-  });
+    const deleteIcon = createElement('lord-icon', '', deleteMain);
+    deleteIcon.src = 'https://cdn.lordicon.com/kfzfxczd.json';
+    deleteIcon.setAttribute('trigger', 'hover');
+    deleteMain.addEventListener('click', () => {
+      if (data.username === userData.username) {
+        deleteFetch(`/delete/${data.id}`);
+        createPost.remove();
+      }
+    });
 
-  const deleteText = createElement('p', '', deleteMain);
-  deleteText.textContent = 'Delete';
-
+    const deleteText = createElement('p', '', deleteMain);
+    deleteText.textContent = 'Delete';
+  }
   const commentsContainer = createElement('div', 'comment-container', postDetails);
   const commentsText = createElement('textarea', '', commentsContainer);
   commentsText.setAttribute('name', 'comment');

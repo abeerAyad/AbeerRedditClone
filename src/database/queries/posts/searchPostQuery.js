@@ -3,7 +3,17 @@ const connection = require('../../config/connection');
 
 const searchPostQuery = (searchTitle) => {
   sql = {
-    text: 'SELECT users.username,posts.* FROM posts JOIN users on posts.user_id = users.id WHERE LOWER(title) LIKE LOWER($1)',
+    text: `SELECT posts.*, users.username,
+       COUNT(DISTINCT comments.id) AS comments_count,
+       COUNT(DISTINCT CASE WHEN votes.vote_type = 'up' THEN votes.id END) AS up_votes_count,
+       COUNT(DISTINCT CASE WHEN votes.vote_type = 'down' THEN votes.id END) AS down_votes_count
+        FROM posts
+        JOIN users ON posts.user_id = users.id
+        LEFT JOIN comments ON posts.id = comments.post_id
+        LEFT JOIN votes ON posts.id = votes.post_id
+        WHERE LOWER(title) LIKE LOWER($1)
+        GROUP BY posts.id, users.username
+        ORDER BY up_votes_count DESC;`,
     values: [`%${searchTitle}%`],
   };
   return connection.query(sql);

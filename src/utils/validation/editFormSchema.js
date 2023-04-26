@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const postFormSchema = Joi.object({
+const editFormSchema = Joi.object({
   title: Joi.string().required(),
   image_url: Joi.string().allow('')
     .optional(),
@@ -9,4 +9,4 @@ const postFormSchema = Joi.object({
     .optional(),
 });
 
-module.exports = postFormSchema;
+module.exports = editFormSchema;

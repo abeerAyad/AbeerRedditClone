@@ -22,5 +22,5 @@ editPost.addEventListener('click', () => {
   content_post = content_post.value;
   editFetch(`/editPostData/${id}`, {
     title, image_url, content_post,
-  }).then((data) => console.log(data.error)).catch((err) => console.log(err));
+  });
 });
