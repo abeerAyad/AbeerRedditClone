@@ -393,14 +393,11 @@ animation: ring-button 3s infinite;
     border: 2px solid #fff;
 }
 .details {
-    /* display: flex;
-    justify-content: space-between; */
     margin-top: 50px;
     padding: 0 25px 20px;
 }
 .info .name {
 text-transform: capitalize;
-/* margin-bottom: 10px; */
 }
 
 .cake-day  {
