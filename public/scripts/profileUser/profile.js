@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 const postAdd = document.querySelector('.add-post');
@@ -24,9 +25,15 @@ const createDetailsUser = (data) => {
   const day = createElement('p', 'day', cakeDay);
   day.textContent = data.created_at.split(':')[0].slice(0, 10);
 };
-
+console.log(usernameProfile);
+console.log(userLogged.username);
+console.log(usernameProfile !== userLogged.username);
 if (usernameProfile !== userLogged.username) {
   postAdd.style.display = 'none';
-} else {
-  postAdd.style.display = 'flex';
 }
+
+const addPostBtn = document.querySelector('.add-post-btn');
+
+addPostBtn.addEventListener('click', () => {
+  location.href = '/addpost';
+});

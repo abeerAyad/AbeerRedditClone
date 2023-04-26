@@ -15,6 +15,7 @@ const user = document.querySelector('.user');
 user.textContent = userData.username;
 user.addEventListener('click', () => {
   location.href = `/profile/${userData.username}`;
+  localStorage.setItem('username-post', JSON.stringify(userData.username));
 });
 
 const createElement = (tagName, className, parent) => {
