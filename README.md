@@ -1,8 +1,4 @@
-# AbeerRedditClone
-
-
-
-## Reddit Clone 😎
+# AbeerRedditClone 😎
 
 ## Database Schema
 
