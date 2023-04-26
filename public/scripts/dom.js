@@ -13,6 +13,9 @@ const usernameLogin = document.querySelector('.username');
 const postsContainer = document.querySelector('.posts');
 const user = document.querySelector('.user');
 user.textContent = userData.username;
+user.addEventListener('click', () => {
+  location.href = `/profile/${userData.username}`;
+});
 
 const createElement = (tagName, className, parent) => {
   const element = document.createElement(tagName);
@@ -81,6 +84,7 @@ const createDom = (data) => {
   userName.textContent = data.username;
   userName.addEventListener('click', () => {
     location.href = `/profile/${data.username}`;
+    localStorage.setItem('username-post', JSON.stringify(data.username));
   });
   const timePosted = createElement('p', 'time', timeUserPost);
   timePosted.textContent = getTimeSincePost(data.created_at);
@@ -96,7 +100,6 @@ const createDom = (data) => {
 
   const imgPost = createElement('div', 'image-post', postDetails);
   const imgUrl = createElement('img', '', imgPost);
-  // console.log(data.image_url)
   if (data.image_url === '') {
     imgPost.textContent = '';
   } else {
