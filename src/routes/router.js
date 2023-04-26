@@ -11,23 +11,24 @@ const {
   getPostById,
   getCommentsPosts,
   deleteCommentById,
-  getUserById,
   votePost,
-  getCountComments,
+  getUserByUsername,
+  getProfileUser,
+  getProfilePages,
 } = require('../controllers');
 const { checkAuth, checkAuthRedirect } = require('../middlewares');
 
 const router = Router();
-
+router.get('/profile/:username', getProfilePages);
 router.get('/post', showHomePost);
 router.get('/posts', getPost);
 router.post('/search', searchPost);
-router.get('/user/:id', getUserById);
 router.get('/addpost', checkAuthRedirect, addNewPost);
-router.get('/count/:id', getCountComments);
 router.use(checkAuth);
+router.get('/user/:username', getUserByUsername);
+router.get('/userProfile/:username', getProfileUser);
 router.get('/comments/:id', getCommentsPosts);
-router.get('/editPost/:id', checkAuthRedirect, getEditPost);
+router.get('/editPost/:id', getEditPost);
 router.post('/votes/:postId/vote', votePost);
 router.get('/logout', logout);
 router.post('/addpost', addPost);

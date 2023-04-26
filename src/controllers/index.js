@@ -10,9 +10,9 @@ const addCommentsPost = require('./comments/addCommentsPost');
 const getPostById = require('./getPostById');
 const getCommentsPosts = require('./comments/getPostComments');
 const deleteCommentById = require('./comments/deleteCommentById');
-const getUserById = require('./users/getUserById');
 const votePost = require('./votes/votePost');
-const getCountComments = require('./comments/getCountComments')
+const {getUserByUsername,getProfilePages} = require('./users/getUserByUsername');
+const getProfileUser = require('./users/getProfile');
 
 module.exports = {
   getPost,
@@ -31,7 +31,8 @@ module.exports = {
   getPostById,
   getCommentsPosts,
   deleteCommentById,
-  getUserById,
+  getUserByUsername,
   votePost,
-  getCountComments,
+  getProfileUser,
+  getProfilePages,
 };

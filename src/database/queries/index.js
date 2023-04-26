@@ -8,11 +8,12 @@ const addCommentsQuery = require('./comments/addCommentsQuery');
 const editPostQuery = require('./posts/editPostQuery');
 const getPostByIdQuery = require('./posts/getPostByIdQuery');
 const deleteCommentByIdQuery = require('./comments/deleteCommentByIdQuery');
-const getUserIdQuery = require('./users/userProfileQuery');
 const {
   voteQuery, deleteVoteQuery, updateVoteQuery, getVotesQuery,
 } = require('./votes');
 
+const getProfileQuery = require('./users/userProfile');
+const getUserInfo = require('./users/getUserInfo');
 
 module.exports = {
   getPostQuery,
@@ -25,9 +26,10 @@ module.exports = {
   editPostQuery,
   getPostByIdQuery,
   deleteCommentByIdQuery,
-  getUserIdQuery,
   voteQuery,
   updateVoteQuery,
   deleteVoteQuery,
   getVotesQuery,
+  getProfileQuery,
+  getUserInfo,
 };

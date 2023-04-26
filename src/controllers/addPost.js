@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 const { join } = require('path');
 const { addPostQuery } = require('../database/queries');
+const { postFormSchema } = require('../utils/validation');
 
 const addNewPost = (req, res) => {
   res.sendFile(
@@ -11,14 +13,14 @@ const addNewPost = (req, res) => {
 };
 const addPost = (req, res, next) => {
   const { title, content_post, image_url } = req.body;
-
-  addPostQuery({
-    title,
-    content_post,
-    image_url,
-    user_id: req.user.id,
-  })
-    .then((data) => res.status(201).json({
+  const { error, value } = postFormSchema
+    .validateAsync({ title, content_post, image_url }, { abortEarly: false })
+    .then(() => addPostQuery({
+      title,
+      content_post,
+      image_url,
+      user_id: req.user.id,
+    })).then((data) => res.status(201).json({
       error: false,
       message: 'Created Post successfully',
       data: data.rows[0],

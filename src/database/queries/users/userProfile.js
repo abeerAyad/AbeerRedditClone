@@ -1,9 +1,8 @@
 /* eslint-disable no-undef */
 const connection = require('../../config/connection');
 
-const getPostQuery = () => {
+const getProfileQuery = (username) => {
   // eslint-disable-next-line no-undef
-
   sql = {
     text: `SELECT
    posts.*,
@@ -15,10 +14,12 @@ const getPostQuery = () => {
     JOIN users ON posts.user_id = users.id
     LEFT JOIN comments ON posts.id = comments.post_id
     LEFT JOIN votes ON posts.id = votes.post_id
+    WHERE users.username = $1
     GROUP BY posts.id, users.username
     ORDER BY up_votes_count DESC;`,
+    values: [username],
   };
   return connection.query(sql);
 };
 
-module.exports = getPostQuery;
+module.exports = getProfileQuery;
