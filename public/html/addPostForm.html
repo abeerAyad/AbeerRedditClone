@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Clone</title>
+    <link rel="shortcut icon" href="../img/reddit-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- <link rel="stylesheet" href="../css/.css"> -->
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../img/Reddit_Lockup_OnWhite.svg" alt="">
+                <!-- <a class="navbar-brand" href="#">reddit</a> -->
+            </div>
+    
+            <div class="home">
+    
+                <lord-icon src="https://cdn.lordicon.com/slduhdil.json" class="home-icon" trigger="hover"
+                    style="width:40px;height:40px"></lord-icon>
+                <a class="home-title" href="/post">Home</a>
+            </div>
+    
+            <div class="navbar-porfile">
+                <button class="logout">Logout</button>
+                <h3 class="user"></h3>
+            </div>
+    
+        </nav>
+    </header>
+<section class="post-content">
+    <div class="create-post-title">
+        <h2>Create a Post</h2>
+    </div>
+
+    <div class="form">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+        <div class="error-title"></div>
+        <label for="imgUrl">Img_Url</label>
+        <input type="text" name="image_url" id="imgUrl">
+
+        <label for="contentPost">Content</label>
+        <textarea name="content_post" id="contentPost" cols="10" rows="5"></textarea>
+        
+
+        <button type="button" class="addPost">Post</button>
+    </div>
+    </section>
+        <script src="../scripts/fetch.js"></script>
+        <script src="../scripts/dom.js"></script>
+        <script src="../scripts/newPostFetch.js"></script>
+        <script src="../scripts/logout.js"></script>
+        <script src="../scripts/validationError.js"></script>
+        <script src="../scripts/domError.js"></script>
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+
+</body>
+</html>

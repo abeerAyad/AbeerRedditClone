@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Reddit</title>
+    <link rel="shortcut icon" href="../img/reddit-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="../img/Reddit_Lockup_OnWhite.svg" alt="" class="reddit">
+        </div>
+        <div class="auth-form">
+     
+            <div class="wrapper">
+                <header>Login Form</header>
+                <div class="form">
+                <div class="field email-field">
+                    <div class="input-area">
+                        <input type="text" name="email" id="email-user" placeholder="Email Address">
+                        <i class="icon fas fa-envelope"></i>
+                        <i class="error error-icon fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="error error-txt">Email can't be blank</div>
+                </div>
+                    <div class="field password-field">
+                        <div class="input-area">
+                            <input type="password" name="password" id="password-user" placeholder="Password">
+                            <i class="icon fas fa-lock"></i>
+                            <i class="error error-icon fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="error error-txt">Password can't be blank</div>
+                    </div>
+                    <div class="pass-txt"><a href="/">Forgot password?</a></div>
+                    <input type="button" class="submit-data" value="Login">
+
+                </div>
+                    <div class="sign-txt">Not yet member? <a href="/">Signup now</a></div>
+            </div>
+    
+    </div>
+        </div>
+    </div>
+    <script src="./scripts/fetch.js"></script>
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/validationError.js"></script>
+    <script src="./scripts/domError.js"></script>
+</body>
+
+</html>

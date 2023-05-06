@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'IBM Plex Sans',Arial, sans-serif;
+    font-size: 16px;
+    background-color: #DAE0E6;
+}
+
+header {
+    background-color: #fff;
+}
+
+header nav {
+ height: 70px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin: 0 60px;
+}
+
+header nav .logo,
+header nav .home {
+    display: flex;
+    align-items: center;
+}
+header nav .logo img {
+    width: 200px;
+    height: 200px;
+}
+
+header nav .logo a {
+    color: #000;
+    font-size: 35px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+header nav .home {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid #ccc;
+}
+
+.navbar-porfile {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-porfile .logout {
+color: #fff;
+background-color: #FF4500;
+outline: none;
+padding: 5px 10px;
+font-size: 20px;
+border-radius: 10px;
+text-transform: capitalize;
+border: none;
+margin-right: 20px;
+}
+
+header nav .home a {
+    color: #000;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.form {
+    position: relative;
+    margin-right: 80px;
+}
+
+.form .search-input {
+    padding: 12px 30px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    font-size: 16px;
+
+}
+.form .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.post-content,.posts {
+    margin: 21px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
+
+.add-post,
+.create-post {
+    display: flex;
+    margin-left: 50px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #edeff1;
+    position: relative;
+}
+.add-post {
+    height: 65px;
+    padding-left: 15px;
+    align-items: center;
+    width: 50%;
+}
+.create-post {
+    padding: 0;
+    margin-top: 30px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.create-post:hover {
+    border: 1px solid #646d73;
+}
+
+.add-post img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.add-post .add-post-btn {
+    text-align: left;
+    width: 90%;
+    height: 40px;
+    margin-left: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+    background-color: #f6f7f8;
+    border: 1px solid #edeff1 ;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.add-post .add-post-btn:hover {
+    background-color: #ffffff33;
+    border: 1px solid #c1cbec;
+}
+
+.create-post .vote-content {
+    padding-right: 15px;
+    padding: 10px 12px 0;
+    background-color: #c1cbec;
+    cursor: pointer;
+}
+
+.count-vote {
+    padding-left: 4px;
+}
+
+.post-details {
+    padding: 12px 15px 20px;
+}
+.post-details .time-user-post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #787C7E;
+}
+
+.post-details .time-user-post .name-user {
+    font-weight: 600;
+    font-size: 18px;
+    color: #313639;
+    cursor: pointer;
+}
+
+.post-details .time-user-post .time {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.post-content .title-post {
+    margin-bottom: 10px;
+}
+
+.post-details .image-post  {
+    width: 100%;  
+}
+.post-details .image-post img {
+    width: 600px;
+    height: 400px;
+    margin: 10px 0 12px 0;
+    border-radius: 2px;
+}
+.vote-content img,
+.comments-edit-delete  img{
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+}
+
+.comments-edit-delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 610px;
+    margin-bottom: 10px;
+}
+
+.comments-edit-delete div {
+    width: fit-content;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px 10px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+.comments-edit-delete div:hover {
+    background-color: #d3d6da;
+}
+
+.comments-edit-delete div p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 5px;
+    color: #898989;
+}
+
+.comment-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comment-container textarea {
+    padding: 9px 12px;
+    width: 96%;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid #313639;
+}
+
+
+.comment-container button {
+ padding: 12px 40px;
+ background-color: #fff;
+ border: 1px solid #313639;
+ color: #333;
+ margin-left: 30px;
+ border-radius: 5px;
+ font-size: 18px;
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.3s ease-in;
+}
+.comment-container button:hover {
+    background-color: #ccc;
+}
+
+.content-comments {
+    margin-top: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in;
+    padding: 10px;
+    border-left: 2px solid #898989;
+    position: relative;
+}
+.content-comments:nth-of-type(odd) {
+    background-color: #c1cbec;
+}
+.user-info-comment {
+    display: flex;
+    align-items: center;
+}
+.user-info-comment .user-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-info-comment .name-user {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.content-comments .comment-text {
+    margin-left: 50px;
+    font-size: 17px;
+}
+
+.delete-comment-icon {
+    width: 25px;
+    height: 25px;
+    /* margin-left: 50px; */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+lord-icon {
+width: 25px;
+height: 25px;
+}
+
+.comment-submit {
+    width: 32px;
+    height: 32px;
+}
+
+
+.count {
+    font-size: 17px;
+    color: #646d73;
+}
+
+.mainCommentIcon {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: 25px;
+z-index: 333;
+animation: ring-button 3s infinite;
+}
+
+.validationComment {
+    margin-top: 20px;
+}
+
+
+@keyframes ring-button {
+    0% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.user {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+

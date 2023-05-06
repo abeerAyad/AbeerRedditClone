@@ -1,0 +1,47 @@
+.post-content {
+    display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+   justify-content: space-around;
+   
+}
+.add-post {
+    width: 700px;
+    /* padding-right: 20px; */
+}
+.profile-user-info {
+    align-items: flex-start;
+    margin-top: 55px;
+    background-color: #fff;
+    width: 320px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.avatar {
+    width: 100%;
+    height: 100px;
+    background-color: #33a8ff;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    margin: 50px 0 0 20px;
+    border: 2px solid #fff;
+}
+
+.details {
+    margin-top: 50px;
+    padding: 0 25px 20px;
+}
+
+.info .name {
+    text-transform: capitalize;
+}
+
+.cake-day {
+    margin-top: 15px;
+}
